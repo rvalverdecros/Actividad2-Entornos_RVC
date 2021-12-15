@@ -41,20 +41,25 @@ fun imprimirCapasInf(edad: Int,capas:Int){
     }
 }
 
-fun imprimirMensaje(mensaje:String){
-    println("''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''")
-    println(mensaje)
-    println("''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''")
+fun imprimirMensaje(mensaje:String, edad: Int){
+    val cantidad = edad/2
+    val men = mensaje.padStart(cantidad, ' ')
+    println("''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''")
+    println(men)
+    println("''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''''-._.-''")
 }
 
 fun main() {
-val edad = 30
-    val capas = 5
-    val mensaje= "¡¡¡¡MUCHAS FELICIDADES!!!!!"
+    println("¿Que edad cumple la persona?")
+val edad = readLine()!!.toInt()
+    println("¿Cuantas capas quieres que tenga la tarta?")
+    val capas = readLine()!!.toInt()
+    println("¿Que mensaje quieres poner junto a la tarta?")
+    val mensaje= readLine().toString()
     println()
     println()
     println()
-    imprimirMensaje(mensaje)
+    imprimirMensaje(mensaje,edad)
     imprimirVelas(edad)
     imprimirCapaSup(edad)
     imprimirCapasInf(edad, capas)
